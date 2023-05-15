@@ -8,7 +8,7 @@ import { resolve } from 'rsvp';
 /**
   @class InfinityModel
   @namespace EmberInfinity
-  @module ember-infinity/lib/infinity-model
+  @module @eflexsystems/ember-infinity/lib/infinity-model
   @extends Ember.ArrayProxy
 */
 export default class InfinityModel extends addEvented(ArrayProxy) {

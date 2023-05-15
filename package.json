@@ -1,5 +1,5 @@
 {
-  "name": "ember-infinity",
+  "name": "@eflexsystems/ember-infinity",
   "version": "2.3.1",
   "description": "Simple, flexible infinite scroll for Ember CLI Apps.",
   "keywords": [
@@ -14,7 +14,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/ember-infinity/ember-infinity",
+  "repository": "https://github.com/eflexsystems/ember-infinity",
   "scripts": {
     "build": "ember build",
     "start": "ember serve",

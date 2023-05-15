@@ -3,7 +3,7 @@ import { setupTest } from 'ember-qunit';
 import { A } from '@ember/array';
 import RSVP from 'rsvp';
 import ArrayProxy from '@ember/array/proxy';
-import InfinityModel from 'ember-infinity/lib/infinity-model';
+import InfinityModel from '@eflexsystems/ember-infinity/lib/infinity-model';
 
 module('Unit | Service | infinity', function(hooks) {
   setupTest(hooks);

@@ -1,1 +1,1 @@
-export { default } from 'ember-infinity/services/infinity';
+export { default } from '@eflexsystems/ember-infinity/services/infinity';

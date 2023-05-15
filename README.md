@@ -1,12 +1,12 @@
 # Ember Infinity
-![Download count all time](https://img.shields.io/npm/dt/ember-infinity.svg)
-[![npm version](https://badge.fury.io/js/ember-infinity.svg)](http://badge.fury.io/js/ember-infinity)
-[![Ember Observer Score](http://emberobserver.com/badges/ember-infinity.svg)](http://emberobserver.com/addons/ember-infinity)
+![Download count all time](https://img.shields.io/npm/dt/@eflexsystems/ember-infinity.svg)
+[![npm version](https://badge.fury.io/js/@eflexsystems/ember-infinity.svg)](http://badge.fury.io/js/@eflexsystems/ember-infinity)
+[![Ember Observer Score](http://emberobserver.com/badges/@eflexsystems/ember-infinity.svg)](http://emberobserver.com/addons/@eflexsystems/ember-infinity)
 
-[![Dependency Status](https://david-dm.org/ember-infinity/ember-infinity.svg)](https://david-dm.org/ember-infinity/ember-infinity)
-[![devDependency Status](https://david-dm.org/ember-infinity/ember-infinity/dev-status.svg)](https://david-dm.org/ember-infinity/ember-infinity#info=devDependencies)
+[![Dependency Status](https://david-dm.org/@eflexsystems/ember-infinity/@eflexsystems/ember-infinity.svg)](https://david-dm.org/@eflexsystems/ember-infinity/@eflexsystems/ember-infinity)
+[![devDependency Status](https://david-dm.org/@eflexsystems/ember-infinity/@eflexsystems/ember-infinity/dev-status.svg)](https://david-dm.org/@eflexsystems/ember-infinity/@eflexsystems/ember-infinity#info=devDependencies)
 
-Demo: [ember-infinity.github.io/ember-infinity/](https://ember-infinity.github.io/ember-infinity/)
+Demo: [@eflexsystems/ember-infinity.github.io/@eflexsystems/ember-infinity/](https://@eflexsystems/ember-infinity.github.io/@eflexsystems/ember-infinity/)
 
 Simple, flexible infinite scrolling for Ember CLI Apps.  Works out of the box
 with the [Kaminari Gem](https://github.com/amatsuda/kaminari.git).
@@ -27,23 +27,23 @@ Table of Contents:
 
 Also:
 
-![Fastbootable](https://s3.amazonaws.com/f.cl.ly/items/392o0m1N0R2515091z25/ember-infinity.gif?v=13181cd7)
+![Fastbootable](https://s3.amazonaws.com/f.cl.ly/items/392o0m1N0R2515091z25/@eflexsystems/ember-infinity.gif?v=13181cd7)
 
 ## Installation
 
-`ember install ember-infinity`
+`ember install @eflexsystems/ember-infinity`
 
 As of `v2.0.0`, we support Node 10 and above.  We test against `ember-source > 3.8`.  Try out `v2.0.0`.  If it doesn't work or you don't have the right polyfills because you are on an older Ember version, then `v1.4.9` will be your best bet.
 
 ## Basic Usage
 
-`ember-infinity` exposes 3 consumable items for your application.
+`@eflexsystems/ember-infinity` exposes 3 consumable items for your application.
 
 1. **infinity service**
 
 2. **infinity-loader component**
 
-3. **Route Mixin** (deprecated and removed as of 1.1). If you still want to upgrade, but keep your Route mixins, install `1.0.2`. See old docs (here)[https://github.com/ember-infinity/ember-infinity/blob/2e0cb02e5845a97cad8783893cd7f4ddcf5dc5a7/README.md]
+3. **Route Mixin** (deprecated and removed as of 1.1). If you still want to upgrade, but keep your Route mixins, install `1.0.2`. See old docs (here)[https://github.com/@eflexsystems/ember-infinity/@eflexsystems/ember-infinity/blob/2e0cb02e5845a97cad8783893cd7f4ddcf5dc5a7/README.md]
 
 ### Service Component Approach
 
@@ -53,7 +53,7 @@ As a result, we can intelligently store your model state to provide you the abil
 
 Moreover, you are not restricted to only fetching items in the route.  Fetch away in any top-level component!
 
-Let's see how simple it is to fetch a list of products.  Instead of `this.store.query('product')` or `this.store.findAll('product')`, you simply invoke `this.infinity.model('product')` and under the hood, `ember-infinity` will query the store and manage fetching new records for you!
+Let's see how simple it is to fetch a list of products.  Instead of `this.store.query('product')` or `this.store.findAll('product')`, you simply invoke `this.infinity.model('product')` and under the hood, `@eflexsystems/ember-infinity` will query the store and manage fetching new records for you!
 
 ```js
 import Route from '@ember/routing/route';
@@ -80,7 +80,7 @@ Whenever the `infinity-loader` component is in view, we will fetch the next page
 
 ### Response Meta Expectations
 
-By default, `ember-infinity` expects the server response to contain something about how many total pages it can expect to fetch. `ember-infinity` defaults to looking for something like `meta: { total_pages: 20 }` in your response.  See [Advanced Usage](#advanced-usage).
+By default, `@eflexsystems/ember-infinity` expects the server response to contain something about how many total pages it can expect to fetch. `@eflexsystems/ember-infinity` defaults to looking for something like `meta: { total_pages: 20 }` in your response.  See [Advanced Usage](#advanced-usage).
 
 ### Multiple Infinity Models in one Route
 
@@ -214,7 +214,7 @@ export default class ProductsRoute extends Route {
 
 ### Closure Actions<a name="ClosureActions"></a>
 
-If you want to use closure actions with `ember-infinity` and the `infinity-loader` component, you need to be a little bit more explicit.  Generally you should let the infinity service handle fetching records for you, but if you have a _special case_, this is how you would do it:
+If you want to use closure actions with `@eflexsystems/ember-infinity` and the `infinity-loader` component, you need to be a little bit more explicit.  Generally you should let the infinity service handle fetching records for you, but if you have a _special case_, this is how you would do it:
 
 See the Ember docs on passing actions to components [here](https://guides.emberjs.com/v3.0.0/components/triggering-changes-with-actions/#toc_passing-the-action-to-the-component).
 
@@ -281,7 +281,7 @@ model() {
 
 ### JSON Request/Response Customization
 
-By default, `ember-infinity` will send pagination parameters as part of a GET request as follows
+By default, `@eflexsystems/ember-infinity` will send pagination parameters as part of a GET request as follows
 
 ```
 /items?per_page=5&page=1
@@ -336,7 +336,7 @@ This will result in request query params being sent out as follows
 /items?per=5&pg=1
 ```
 
-and `ember-infinity` will be set up to parse the total number of pages from a JSON response like this:
+and `@eflexsystems/ember-infinity` will be set up to parse the total number of pages from a JSON response like this:
 
 ```js
 {
@@ -388,7 +388,7 @@ To do this, implement the `afterInfinityModel` hook as follows:
 
 ```js
 import Route from '@ember/routing/route';
-import InfinityModel from 'ember-infinity/lib/infinity-model';
+import InfinityModel from '@eflexsystems/ember-infinity/lib/infinity-model';
 
 const ExtendedInfinityModel = InfinityModel.extend({
   buildParams() {
@@ -432,7 +432,7 @@ return this.infinity.model('product', { perPage: 12, startingPage: 1,
 As of 1.0+, you can override or extend the behavior of Ember Infinity by providing a class that extends InfinityModel as a third argument to the Route#infinityModel hook.
 
 ```js
-import InfinityModel from 'ember-infinity/lib/infinity-model';
+import InfinityModel from '@eflexsystems/ember-infinity/lib/infinity-model';
 
 const ExtendedInfinityModel = InfinityModel.extend({
   buildParams() {
@@ -458,10 +458,10 @@ export default class ProductsRoute extends Route {
 }
 ```
 
-There is a lot you can do with this!  Here is a simple use case where, say you have an API that does not return `total_pages` or `count` and you also don't need a loading spinner. Just set `canLoadMore` to true and `ember-infinity` will always try to fetch new records when the `infinity-loader` comes into viewport.
+There is a lot you can do with this!  Here is a simple use case where, say you have an API that does not return `total_pages` or `count` and you also don't need a loading spinner. Just set `canLoadMore` to true and `@eflexsystems/ember-infinity` will always try to fetch new records when the `infinity-loader` comes into viewport.
 
 ```js
-import InfinityModel from 'ember-infinity/lib/infinity-model';
+import InfinityModel from '@eflexsystems/ember-infinity/lib/infinity-model';
 
 class ExtendedInfinityModel extends InfinityModel {
   canLoadMore = true;
@@ -504,11 +504,11 @@ promises after fetching a model.
 As a simple example, let's say you had a blog and just needed to set a property
 on each Post model after fetching all of them:
 
-#### Using the `ember-infinity` Service approach
+#### Using the `@eflexsystems/ember-infinity` Service approach
 
 ```js
 import Route from '@ember/routing/route';
-import InfinityModel from 'ember-infinity/lib/infinity-model';
+import InfinityModel from '@eflexsystems/ember-infinity/lib/infinity-model';
 
 const ExtendedInfinityModel = InfinityModel.extend({
   afterInfinityModel(posts) {
@@ -531,7 +531,7 @@ return the collection you want from afterInfinityModel:
 
 ```js
 import Route from '@ember/routing/route';
-import InfinityModel from 'ember-infinity/lib/infinity-model';
+import InfinityModel from '@eflexsystems/ember-infinity/lib/infinity-model';
 
 const ExtendedInfinityModel = InfinityModel.extend({
   afterInfinityModel(posts) {
@@ -580,7 +580,7 @@ Triggered on InfinityModel when is fully loaded.
 
 ```js
 import Route from '@ember/routing/route';
-import InfinityModel from 'ember-infinity/lib/infinity-model';
+import InfinityModel from '@eflexsystems/ember-infinity/lib/infinity-model';
 
 const ExtendedInfinityModel = InfinityModel.extend({
   infinityModelUpdated({ lastPageLoaded, totalPages, newObjects }) {
@@ -744,9 +744,9 @@ You can optionally pass an offset value.   This value will be used when calculat
 
 Default is 50ms.  You can optionally pass a debounce time to delay loading the list when reach bottom of list
 
-### Use `ember-infinity` with button
+### Use `@eflexsystems/ember-infinity` with button
 
-You can use the service loading magic of ember-infinity without using the InfinityLoader component.
+You can use the service loading magic of @eflexsystems/ember-infinity without using the InfinityLoader component.
 
 load-more-button.js:
 

@@ -6,7 +6,7 @@ import RSVP from 'rsvp';
 import { run } from '@ember/runloop';
 import EmberObject, { get } from '@ember/object';
 import { module, test } from 'qunit';
-import InfinityModel from 'ember-infinity/lib/infinity-model';
+import InfinityModel from '@eflexsystems/ember-infinity/lib/infinity-model';
 import { setupTest } from 'ember-qunit';
 
 module('Unit | RouteMixin', function(hooks) {

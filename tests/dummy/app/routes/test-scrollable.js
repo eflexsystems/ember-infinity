@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import InfinityModel from 'ember-infinity/lib/infinity-model';
+import InfinityModel from '@eflexsystems/ember-infinity/lib/infinity-model';
 import { get, set } from '@ember/object';
 import { inject as service } from '@ember/service';
 
