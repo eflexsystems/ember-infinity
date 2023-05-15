@@ -145,7 +145,7 @@ export default class Infinity extends Service {
    */
   replace(infinityModel, newCollection) {
     if (checkInstanceOf(infinityModel)) {
-      let len = infinityModel.get('length');
+      let len = get(infinityModel, 'length');
       infinityModel.replace(0, len, convertToArray(newCollection));
       return infinityModel;
     }
@@ -159,7 +159,7 @@ export default class Infinity extends Service {
    */
   flush(infinityModel) {
     if (checkInstanceOf(infinityModel)) {
-      let len = infinityModel.get('length');
+      let len = get(infinityModel, 'length');
       infinityModel.replace(0, len, []);
       return infinityModel;
     }
@@ -434,17 +434,17 @@ export default class Infinity extends Service {
   _doUpdate(queryObject, infinityModel) {
     set(infinityModel, 'isLoaded', true);
 
-    const totalPages = queryObject.get(get(infinityModel, 'totalPagesParam'));
-    const count = queryObject.get(get(infinityModel, 'countParam'));
+    const totalPages = get(queryObject, get(infinityModel, 'totalPagesParam'));
+    const count = get(queryObject, get(infinityModel, 'countParam'));
     set(infinityModel, '_totalPages', totalPages);
     set(infinityModel, '_count', count);
     set(infinityModel, 'meta', get(queryObject, 'meta'));
 
     let newObjects;
-    if (infinityModel.get('_increment') === 1) {
-       newObjects = infinityModel.pushObjects(queryObject.toArray());
+    if (get(infinityModel, '_increment') === 1) {
+       newObjects = infinityModel.pushObjects(convertToArray(queryObject));
     } else {
-      newObjects = infinityModel.unshiftObjects(queryObject.toArray());
+      newObjects = infinityModel.unshiftObjects(convertToArray(queryObject));
     }
 
     this._notifyInfinityModelUpdated(queryObject, infinityModel);
